@@ -17,18 +17,11 @@ jobs:
         # You may pin to the exact commit or the version.
         # uses: easingthemes/ssh-deploy@8be4106fcece54a488146d4db78e270310feb10f
         uses: easingthemes/ssh-deploy@v4.0.0
-        with:
-          # Private key part of an SSH key pair
+        env:
           SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-          # Remote host
           REMOTE_HOST: ${{ secrets.HOST }}
-          # Remote user
           REMOTE_USER: ${{ secrets.USERNAME }}
-          # Remote port
-          # Source directory, path relative to `$GITHUB_WORKSPACE` root, eg: `dist/`
           SOURCE: .
-          # Target directory
           TARGET: /home/adelwort/Desktop/deep-net-prod
-          # Script to run on host machine after rsync
-          SCRIPT_AFTER: echo "second test!" >> /home/adelwort/Desktop/output_here.txt
+          SCRIPT_AFTER: echo "second test2!" >> /home/adelwort/Desktop/output_here.txt
           
