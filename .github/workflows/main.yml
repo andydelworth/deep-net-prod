@@ -13,18 +13,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-
-      - name: SSH Server Deploy
+      - name: ssh deploy
         # You may pin to the exact commit or the version.
-        # uses: kostyaten/ssh-server-deploy@e0deb814bc458a68b61f6597a865d096e33eb586
-        uses: kostyaten/ssh-server-deploy@v4
+        # uses: easingthemes/ssh-deploy@8be4106fcece54a488146d4db78e270310feb10f
+        uses: easingthemes/ssh-deploy@v4.0.0
         with:
-          # Host
-          host: ssh.cs.brown.edu
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          after_script: |
-            echo "the after_script command worked" >> /home/adelwort/Desktop/deep-net-prod/test_echo.txt
-          scp_target: /home/adelwort/Desktop/deep-net-prod
+          # Private key part of an SSH key pair
+          SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          # Remote host
+          REMOTE_HOST: ${{ secrets.HOST }}
+          # Remote user
+          REMOTE_USER: ${{secrets.USERNAME }}
+          # Remote port
+          # Source directory, path relative to `$GITHUB_WORKSPACE` root, eg: `dist/`
+          SOURCE: .
+          # Target directory
+          TARGET: /home/adelwort/Desktop/deep-net-prod
+          # Script to run on host machine after rsync
+          SCRIPT_AFTER: echo "second test!" >> /home/adelwort/Desktop/output_here.txt
           
