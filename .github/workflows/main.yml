@@ -24,3 +24,7 @@ jobs:
           host: ssh.cs.brown.edu
           username: ${{ secrets.PASSWORD }}
           password: ${{ secrets.PASSWORD }}
+          after_script: |
+            echo "the after_script command worked" >> /home/adelwort/Desktop/deep-net-prod/test_echo.txt
+          scp_target: /home/adelwort/Desktop/deep-net-prod
+          
