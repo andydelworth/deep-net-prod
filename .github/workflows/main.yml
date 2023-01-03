@@ -2,9 +2,11 @@ name: Remote Server Deployer
 
 on:
   push:
-    branches: staging
+    branches: 
+    - staging
   pull_request:
-    branches: staging
+    branches:
+    - staging
 
 jobs:
   build:
