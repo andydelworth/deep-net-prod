@@ -20,6 +20,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           REMOTE_HOST: ${{ secrets.HOST }}
           REMOTE_USER: ${{ secrets.USERNAME }}
+          REMOTE_PORT: 22 -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedKeyTypes=+ssh-rsa
           SOURCE: .
           TARGET: /home/adelwort/Desktop/deep-net-prod
           SCRIPT_AFTER: echo "second test2!" >> /home/adelwort/Desktop/output_here.txt
