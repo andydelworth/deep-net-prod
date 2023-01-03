@@ -19,11 +19,11 @@ jobs:
         uses: easingthemes/ssh-deploy@v4.0.0
         with:
           # Private key part of an SSH key pair
-          sshPrivateKey: ${{ secrets.PRIVATE_KEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           # Remote host
-          remoteHost: ${{ secrets.HOST }}
+          REMOTE_HOST: ${{ secrets.HOST }}
           # Remote user
-          remoteUser: ${{secrets.USERNAME }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
           # Remote port
           # Source directory, path relative to `$GITHUB_WORKSPACE` root, eg: `dist/`
           SOURCE: .
