@@ -22,7 +22,7 @@ jobs:
         with:
           # Host
           host: ssh.cs.brown.edu
-          username: ${{ secrets.PASSWORD }}
+          username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           after_script: |
             echo "the after_script command worked" >> /home/adelwort/Desktop/deep-net-prod/test_echo.txt
