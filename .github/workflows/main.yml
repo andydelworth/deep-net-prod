@@ -18,7 +18,7 @@ jobs:
         uses: easingthemes/ssh-deploy@v4.0.0
         with:
           SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-          REMOTE_HOST: ssh.cs.brown.edu
+          REMOTE_HOST: ${{ secrets.HOST }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           SOURCE: .
           TARGET: /home/adelwort/Desktop/deep-net-prod
