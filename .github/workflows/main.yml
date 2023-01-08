@@ -18,6 +18,7 @@ jobs:
         # uses: easingthemes/ssh-deploy@8be4106fcece54a488146d4db78e270310feb10f
         uses: easingthemes/ssh-deploy@v4.0.0
         with:
+          SCRIPT_BEFORE: ls
           # Private key part of an SSH key pair
           SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           # Remote host
