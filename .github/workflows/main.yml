@@ -31,7 +31,7 @@ jobs:
         uses: easingthemes/ssh-deploy@v4.0.0
         with:
           SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-          REMOTE_HOST: ${{ secrets.HOST }}
+          REMOTE_HOST: ssh.cs.brown.edu
           REMOTE_USER: ${{ secrets.USERNAME }}
           REMOTE_PORT: 22 -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedKeyTypes=+ssh-rsa
           SOURCE: .
