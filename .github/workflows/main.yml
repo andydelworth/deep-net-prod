@@ -36,5 +36,5 @@ jobs:
           REMOTE_PORT: 22 -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedKeyTypes=+ssh-rsa
           SOURCE: .
           TARGET: /home/adelwort/Desktop/deep-net-prod
-          SCRIPT_AFTER: echo "second test22!" >> /home/adelwort/Desktop/output_here.txt
+          SCRIPT_AFTER: echo "second test222!" >> /home/adelwort/Desktop/output_here.txt
           
